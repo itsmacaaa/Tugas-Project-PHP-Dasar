@@ -1,0 +1,242 @@
+/* ==========================================
+   TEMA PASTEL PINK & CREAM (GAYA FONT GEORGIA SERIF)
+   ========================================== */
+
+:root {
+    --bg-pink: #f7a8be;         
+    --card-cream: #ffffd8;       
+    --accent-maroon: #801b44;    
+    --accent-maroon-hover: #631233;
+    --accent-pink-box: #f5b0c4;   /* Warna pink saat input diisi */
+    --accent-pink-active: #e3839f; 
+    --white: #ffffff;
+    
+    /* Font Serif Klasik Sesuai Gambar */
+    --font-serif: Georgia, 'Times New Roman', Times, serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-pink);
+    font-family: var(--font-serif);
+    color: var(--accent-maroon);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* --- Container Utama --- */
+.container {
+    background-color: var(--card-cream);
+    width: 100%;
+    max-width: 950px;
+    padding: 40px 45px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(128, 27, 68, 0.1);
+    text-align: left;
+}
+
+.container.kecil {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Judul & Subjudul --- */
+.container > h2 {
+    font-family: var(--font-serif);
+    color: var(--accent-maroon);
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.container > p {
+    font-family: var(--font-serif);
+    color: var(--accent-maroon);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* --- TABEL DAFTAR MAHASISWA (1 TABEL UTUH MENYATU) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(128, 27, 68, 0.05);
+    margin-top: 10px;
+}
+
+thead {
+    background-color: #fce8ee;
+}
+
+th {
+    font-family: var(--font-serif);
+    color: var(--accent-maroon);
+    font-size: 14px;
+    padding: 14px 12px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid var(--accent-pink-box);
+}
+
+td {
+    font-family: var(--font-serif);
+    color: var(--accent-maroon);
+    padding: 14px 14px;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #f4e3eb;
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+td:nth-child(3), 
+td:nth-child(4) {
+    text-align: left;
+}
+
+tbody tr:hover td {
+    background-color: #fff4f8;
+}
+
+/* --- KHUSUS HALAMAN DETAIL (Jurusan Tetap 1 Baris) --- */
+table.info, 
+.info {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+table.info td, 
+.info td {
+    font-family: var(--font-serif);
+    padding: 14px 18px;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 1px solid #f4e3eb;
+}
+
+table.info tr:last-child td, 
+.info tr:last-child td {
+    border-bottom: none;
+}
+
+table.info tr td:first-child, 
+.info tr td:first-child {
+    width: 22%;
+    font-weight: bold;
+}
+
+table.info tr td:last-child, 
+.info tr td:last-child {
+    width: 78%;
+}
+
+/* --- Status Badge --- */
+.badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-lulus {
+    background-color: var(--accent-pink-box);
+    color: var(--accent-maroon);
+}
+
+.status-tidak {
+    background-color: #ffd1d1;
+    color: #900c3f;
+}
+
+/* --- TOMBOL & ANIMASI KLIK --- */
+.btn-detail, 
+button[type="submit"] {
+    display: inline-block;
+    background-color: var(--accent-maroon);
+    color: var(--white);
+    padding: 10px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: var(--font-serif);
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(128, 27, 68, 0.15);
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-detail:hover, 
+button[type="submit"]:hover {
+    background-color: var(--accent-maroon-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(128, 27, 68, 0.25);
+}
+
+.btn-detail:active, 
+button[type="submit"]:active {
+    background-color: var(--accent-pink-active) !important;
+    color: var(--accent-maroon) !important;
+    transform: translateY(1px) scale(0.96);
+}
+
+/* --- FORM INPUT & TEXTAREA --- */
+form {
+    text-align: left;
+    margin-top: 15px;
+}
+
+label {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--accent-maroon);
+    margin-top: 16px;
+    margin-bottom: 6px;
+}
+
+input[type="text"], 
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background-color: var(--white);
+    font-family: var(--font-serif);
+    font-size: 14px;
+    color: var(--accent-maroon);
+    outline: none;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Warna pink pastel saat input diisi */
+input[type="text"]:not(:placeholder-shown),
+textarea:not(:placeholder-shown) {
+    background-color: var(--accent-pink-box);
+}
+
+input[type="text"]:focus, 
+textarea:focus {
+    border-color: #d16b8d;
+}
